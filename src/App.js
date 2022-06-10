@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Nav from './components/nav';
+import Content from './components/content';
+import './index.css';
 
 function App() {
+  const [count, setCount]=useState(0)
+
+ 
+  function checkout(){
+    setCount(0)
+  }
+ 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='container'>
+
+       <Nav cartCount={count} checkout={checkout} setCount={setCount}count={count}/>
+       <Content count={count} setCount={setCount}/>
+     
+     </div>
   );
 }
 
